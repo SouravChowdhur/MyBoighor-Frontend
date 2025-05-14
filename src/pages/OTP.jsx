@@ -4,11 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { otpVerification, resetAuthSlice } from '../store/slices/authSlice';
 import { toast } from 'react-toastify';
 import logo_with_title from "../assets/logo_with_title.png";
+import { useNavigate } from "react-router-dom";
+
 
 const OTP = () => {
   const { email } = useParams();
   const [otp, setOtp] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const { loading,
     error,
     message,
@@ -26,7 +30,10 @@ const OTP = () => {
       toast.error(error);
       dispatch(resetAuthSlice())
     }
-  }, [isAuthenticated, loading, error, dispatch]);
+    if (isAuthenticated && user) {
+    navigate("/dashboard");
+  }
+  }, [isAuthenticated, loading, error, user, dispatch]);
   
   return <>
      <div className='flex flex-col justify-center md:flex-row h-screen'>
