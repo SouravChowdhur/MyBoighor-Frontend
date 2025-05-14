@@ -144,7 +144,7 @@ export const resetAuthSlice = ()=> (dispatch)=>{
 
 export const register = (data)=> async(dispatch)=>{
     dispatch(authSlice.actions.registerRequest())
-    await axios.post("http://localhost:4000/api/v1/auth/register", data, {
+    await axios.post("https://myboighorbackend.onrender.com/api/v1/auth/register", data, {
         withCredentials: true,
         headers: {
             "Content-Type": "application/json"
@@ -159,7 +159,7 @@ export const register = (data)=> async(dispatch)=>{
 
 export const otpVerification = (email, otp)=> async(dispatch)=>{
     dispatch(authSlice.actions.otpVerificationRequest())
-    await axios.post("http://localhost:4000/api/v1/auth/verify-otp", {email, otp}, {
+    await axios.post("https://myboighorbackend.onrender.com/api/v1/auth/verify-otp", {email, otp}, {
         withCredentials: true,
         headers: {
             "Content-Type": "application/json"
@@ -174,7 +174,7 @@ export const otpVerification = (email, otp)=> async(dispatch)=>{
 
 export const login = (data)=> async(dispatch)=>{
     dispatch(authSlice.actions.loginRequest())
-    await axios.post("http://localhost:4000/api/v1/auth/login", data, {
+    await axios.post("https://myboighorbackend.onrender.com/api/v1/auth/login", data, {
         withCredentials: true,
         headers: {
             "Content-Type": "application/json"
@@ -189,7 +189,7 @@ export const login = (data)=> async(dispatch)=>{
 
 export const logout = ()=> async(dispatch)=>{
     dispatch(authSlice.actions.logoutRequest())
-    await axios.get("http://localhost:4000/api/v1/auth/logout", {
+    await axios.get("https://myboighorbackend.onrender.com/api/v1/auth/logout", {
         withCredentials: true,
     }).then(res=>{
         dispatch(authSlice.actions.logoutSuccess(res.data.message));
@@ -202,7 +202,7 @@ export const logout = ()=> async(dispatch)=>{
 
 export const getUser = ()=> async(dispatch)=>{
     dispatch(authSlice.actions.getUserRequest())
-    await axios.get("http://localhost:4000/api/v1/auth/me", {
+    await axios.get("https://myboighorbackend.onrender.com/api/v1/auth/me", {
         withCredentials: true,
     }).then(res=>{
         dispatch(authSlice.actions.getUserSuccess(res.data));
@@ -215,7 +215,7 @@ export const getUser = ()=> async(dispatch)=>{
 
 export const forgotPassword = (email)=> async(dispatch)=>{
     dispatch(authSlice.actions.forgotPasswordRequest())
-    await axios.post("http://localhost:4000/api/v1/auth/password/forgot", {email}, {
+    await axios.post("https://myboighorbackend.onrender.com/api/v1/auth/password/forgot", {email}, {
         withCredentials: true,
         headers: {
             "Content-Type": "application/json"
@@ -230,7 +230,7 @@ export const forgotPassword = (email)=> async(dispatch)=>{
 
 export const resetPassword = (data, token)=> async(dispatch)=>{
     dispatch(authSlice.actions.resetPasswordRequest())
-    await axios.put(`http://localhost:4000/api/v1/auth/password/reset/${token}`, data, {
+    await axios.put(`https://myboighorbackend.onrender.com/api/v1/auth/password/reset/${token}`, data, {
         withCredentials: true,
         headers: {
             "Content-Type": "application/json"
@@ -245,7 +245,7 @@ export const resetPassword = (data, token)=> async(dispatch)=>{
 
 export const updatePassword = (data)=> async(dispatch)=>{
     dispatch(authSlice.actions.updatePasswordRequest())
-    await axios.put(`http://localhost:4000/api/v1/auth/password/update`, data, {
+    await axios.put(`https://myboighorbackend.onrender.com/api/v1/auth/password/update`, data, {
         withCredentials: true,
         headers: {
             "Content-Type": "application/json"
