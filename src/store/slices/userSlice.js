@@ -36,7 +36,7 @@ const userSlice = createSlice({
 
 export const fetchAllUsers = () => async (dispatch) => {
     dispatch(userSlice.actions.fetchAllUserRequest());
-    await axios.get("https://myboighorbackend.onrender.com/api/v1/user/all", { withCredentials: true }).then((res) => {
+    await axios.get("https://myboighor-backend.onrender.com/api/v1/user/all", { withCredentials: true }).then((res) => {
         dispatch(userSlice.actions.fetchAllUserSuccess(res.data.users));
     }).catch((err) => {
         dispatch(userSlice.actions.fetchAllUserFailed(err.response.data.message));
@@ -46,7 +46,7 @@ export const fetchAllUsers = () => async (dispatch) => {
 
 export const addNewAdmin = (data) => async (dispatch) => {
     dispatch(userSlice.actions.addNewAdminRequest());
-    await axios.post("https://myboighorbackend.onrender.com/api/v1/user/add/new-admin", data, { withCredentials: true, headers: {"Content-Type": "multipart/form-data",} }).then((res) => {
+    await axios.post("https://myboighor-backend.onrender.com/api/v1/user/add/new-admin", data, { withCredentials: true, headers: {"Content-Type": "multipart/form-data",} }).then((res) => {
         dispatch(userSlice.actions.addNewAdminSuccess());
         toast.success(res.data.message);
         dispatch(toggleAddNewAdminPopup());
