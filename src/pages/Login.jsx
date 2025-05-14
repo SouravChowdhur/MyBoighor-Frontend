@@ -54,7 +54,7 @@ const Login = () => {
           <p className='text-orange-500 text-center mb-12'>please enter your credentials to login</p>
           <form onSubmit={handleLogin}>
             <div className='mb-4'>
-              <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email' className='px-4 py-3 w-full border border-orange-500 rounded-md focus:outline-none'/>
+              <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} autoComplete="email" placeholder='Email' className='px-4 py-3 w-full border border-orange-500 rounded-md focus:outline-none'/>
             </div>
             <div className='mb-4'>
               <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder='Password' className='px-4 py-3 w-full border border-orange-500 rounded-md focus:outline-none'/>
