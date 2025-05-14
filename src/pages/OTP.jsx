@@ -31,7 +31,7 @@ const OTP = () => {
       dispatch(resetAuthSlice())
     }
     if (isAuthenticated && user) {
-    navigate("/dashboard");
+    navigate("/"); 
   }
   }, [isAuthenticated, loading, error, user, dispatch]);
   
