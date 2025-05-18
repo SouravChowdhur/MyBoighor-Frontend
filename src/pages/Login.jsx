@@ -50,7 +50,7 @@ const Login = () => {
               <img src={logo_with_title} alt="logo" className='h-24 w-auto'/>
             </div>
           </div>
-          <h1 className='text-4xl text-orange-500 font-medium text-center mb-12 overflow-hidden'>Welcome back</h1>
+          <h1 className='text-4xl text-orange-500 font-medium text-center mb-12 overflow-hidden'>Welcome To CampusBookSwap</h1>
           <p className='text-orange-500 text-center mb-12'>please enter your credentials to login</p>
           <form onSubmit={handleLogin}>
             <div className='mb-4'>
